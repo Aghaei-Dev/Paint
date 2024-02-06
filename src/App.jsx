@@ -1,19 +1,26 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from '@emotion/styled'
-import { DrawingBoard, TopTool, SideTool } from './components'
+import { useSelector } from 'react-redux'
+import { DrawingBoard, TopTool, CenterTool } from './components'
+import { darkModeHandler } from './function'
 export default function App() {
+  const { isDarkMode } = useSelector((store) => store.global)
+
+  useEffect(() => {
+    darkModeHandler(isDarkMode, 'darkMode')
+  }, [isDarkMode])
   return (
     <Wrapper>
       <TopTool />
-      <SideTool />
+      <CenterTool />
       <DrawingBoard />
     </Wrapper>
   )
 }
 
 const Wrapper = styled('section')(() => ({
-  display: 'grid',
-  gridTemplateColumns: '70px 1fr',
-  gridTemplateRows: '70px 1fr',
   height: '100dvh',
+  display: 'flex',
+  flexDirection: 'column',
+  overflow: 'hidden',
 }))

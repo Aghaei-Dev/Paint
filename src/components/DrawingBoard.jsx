@@ -3,14 +3,15 @@ import styled from '@emotion/styled'
 
 import { generateId } from '../function'
 import { useLocalStorage } from '../hook'
+import { useSelector } from 'react-redux'
 
 export default function DrawingBoard() {
+  const { color, strokeWidth } = useSelector((store) => store.draw)
+  console.log(color)
   const svgRef = useRef()
   const [isDrawing, setIsDrawing] = useState(false)
   const [id, setId] = useState('')
   const [lines, setLines] = useLocalStorage('lines', [])
-  const [color, setColor] = useState('#acdd39')
-  const [strokeWidth, setStrokeWidth] = useState('1')
 
   const handleMouseDown = (e) => {
     handleStartDrawing(e.clientX, e.clientY)
@@ -65,6 +66,7 @@ export default function DrawingBoard() {
       )
     )
   }
+  console.log(lines[lines.length - 1].points)
 
   const handleStopDrawing = () => {
     setIsDrawing(false)
@@ -110,7 +112,6 @@ export default function DrawingBoard() {
 
 const Wrapper = styled('svg')(() => ({
   cursor: 'crosshair',
-  background: '#fefefe',
   width: '100%',
   height: '100%',
 }))

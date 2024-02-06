@@ -1,4 +1,4 @@
 import TopTool from './Top'
-import SideTool from './Side'
+import CenterTool from './Center'
 
-export { TopTool, SideTool }
+export { TopTool, CenterTool }
