@@ -1,8 +1,22 @@
 import ArrowRight from './ArrowRight'
 import ArrowLeft from './ArrowLeft'
 
-import MagPlus from './MagPlus'
-import MagMinus from './MagMinus'
+import Plus from './Plus'
+import Minus from './Minus'
 import Moon from './Moon'
+import Cursor from './Cursor'
+import Hand from './Hand'
+import Pen from './Pen'
+import StickyNote from './StickyNote'
 
-export { ArrowRight, ArrowLeft, MagMinus, MagPlus, Moon }
+export {
+  ArrowRight,
+  ArrowLeft,
+  Minus,
+  Plus,
+  Moon,
+  Cursor,
+  Hand,
+  Pen,
+  StickyNote,
+}

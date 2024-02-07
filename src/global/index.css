@@ -185,3 +185,9 @@ body {
   background: var(--white-1000);
   color: var(--black-800);
 }
+
+button {
+  background: none;
+  border: none;
+  outline: none;
+}

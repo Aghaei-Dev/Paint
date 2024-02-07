@@ -58,15 +58,15 @@ export default function DrawingBoard() {
           ? {
               ...line,
               points: line.points.concat({
-                x: x - svgRect.x,
-                y: y - svgRect.y,
+                x: Math.floor(x - svgRect.x),
+                y: Math.floor(y - svgRect.y),
               }),
             }
           : line
       )
     )
   }
-  console.log(lines[lines.length - 1].points)
+  // console.log(lines[lines.length - 1].points)
 
   const handleStopDrawing = () => {
     setIsDrawing(false)

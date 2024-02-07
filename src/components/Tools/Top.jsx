@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import { ArrowRight, ArrowLeft, MagPlus, MagMinus } from '../../assets/icons'
+import { ArrowRight, ArrowLeft } from '../../assets/icons'
 import { Toggle, Tooltip } from '../'
 
 export default function Top() {
@@ -13,14 +13,7 @@ export default function Top() {
         <Tooltip title='Ctrl + Y' placement='bottom'>
           <ArrowRight />
         </Tooltip>
-
-        <Tooltip title='Ctrl + "+"' placement='bottom'>
-          <MagPlus />
-        </Tooltip>
-
-        <Tooltip title='Ctrl + "-"' placement='bottom'>
-          <MagMinus />
-        </Tooltip>
+        <Tooltip title='Ctrl + Y' placement='bottom'></Tooltip>
       </div>
       <Toggle />
     </Wrapper>

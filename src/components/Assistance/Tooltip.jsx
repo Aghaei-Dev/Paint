@@ -15,7 +15,6 @@ export default function Tooltip({ delay, children, title, placement }) {
     clearInterval(timeout)
     setActive(false)
   }
-
   return (
     <Wrapper onMouseEnter={show} onMouseLeave={hide}>
       {children}
@@ -30,17 +29,15 @@ export default function Tooltip({ delay, children, title, placement }) {
 
 const Wrapper = styled('div')(() => ({
   position: 'relative',
-  width: '25px',
-  height: '25px',
-
+  display: 'flex',
   '.tooltip': {
     position: 'absolute',
     borderRadius: 'var(--radius)',
     left: '50%',
     transform: ' translateX(-50%)',
     padding: '6px',
-    color: 'var(--text-200)',
-    background: 'var(--bg-tooltip)',
+    color: 'var(--white-700)',
+    background: 'var(--black-600)',
     zIndex: '100',
     whiteSpace: 'nowrap',
     '::before': {
@@ -59,7 +56,7 @@ const Wrapper = styled('div')(() => ({
     top: ' -40px',
     '::before': {
       top: ' 100%',
-      borderTopColor: 'var(--bg-tooltip)',
+      borderTopColor: 'var(--black-600)',
     },
   },
   '.tooltip.right': {
@@ -70,14 +67,14 @@ const Wrapper = styled('div')(() => ({
       left: '-4px',
       top: ' 50%',
       transform: 'translateX(0) translateY(-50%)',
-      borderRightColor: 'var(--bg-tooltip)',
+      borderRightColor: 'var(--black-600)',
     },
   },
   ' .tooltip.bottom': {
     bottom: '-40px',
     '::before': {
       bottom: '100%',
-      borderBottomColor: 'var(--bg-tooltip)',
+      borderBottomColor: 'var(--black-600)',
     },
   },
   ' .tooltip.left': {
@@ -90,7 +87,7 @@ const Wrapper = styled('div')(() => ({
       right: '-8px',
       top: '50%',
       transform: ' translateX(0) translateY(-50%)',
-      borderLeftColor: 'var(--bg-tooltip)',
+      borderLeftColor: 'var(--black-600)',
     },
   },
 }))

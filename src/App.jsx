@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import styled from '@emotion/styled'
 import { useSelector } from 'react-redux'
-import { DrawingBoard, TopTool, CenterTool } from './components'
+import { DrawingBoard, TopTool, CenterTool, ZoomTool } from './components'
 import { darkModeHandler } from './function'
 export default function App() {
   const { isDarkMode } = useSelector((store) => store.global)
@@ -13,6 +13,7 @@ export default function App() {
     <Wrapper>
       <TopTool />
       <CenterTool />
+      <ZoomTool />
       <DrawingBoard />
     </Wrapper>
   )
