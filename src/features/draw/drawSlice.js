@@ -1,11 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-  color: 'gold',
+  color: 'var(--teal-1000)',
   stickyColor: '#333',
   shapeColor: '#f00',
   strokeWidth: '3',
   cursor: 'hand',
+  activeTool: 'pen',
 }
 const drawSlice = createSlice({
   name: 'draw',

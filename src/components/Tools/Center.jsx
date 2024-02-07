@@ -100,7 +100,7 @@ const Wrapper = styled('div')(() => ({
     alignItems: 'center',
 
     '.pen': {
-      background: 'red',
+      // background: 'red',
       // maxHeight: '70px',
     },
     article: {
