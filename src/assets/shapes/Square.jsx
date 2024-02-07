@@ -4,15 +4,8 @@ export default function Square() {
   const { shapeColor } = useSelector((store) => store.draw)
 
   return (
-    <svg>
-      <rect
-        x='16'
-        y='16'
-        width='112'
-        height='112'
-        fill={shapeColor}
-        rx='3.23077'
-      ></rect>
+    <svg width='50' height='50' xmlns='http://www.w3.org/2000/svg'>
+      <rect width='50' height='50' x='20' y='20' fill={shapeColor} />
     </svg>
   )
 }

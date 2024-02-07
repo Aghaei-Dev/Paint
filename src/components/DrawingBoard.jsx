@@ -7,7 +7,6 @@ import { useSelector } from 'react-redux'
 
 export default function DrawingBoard() {
   const { color, strokeWidth } = useSelector((store) => store.draw)
-  console.log(color)
   const svgRef = useRef()
   const [isDrawing, setIsDrawing] = useState(false)
   const [id, setId] = useState('')
@@ -61,12 +60,13 @@ export default function DrawingBoard() {
                 x: Math.floor(x - svgRect.x),
                 y: Math.floor(y - svgRect.y),
               }),
+              color,
+              strokeWidth,
             }
           : line
       )
     )
   }
-  // console.log(lines[lines.length - 1].points)
 
   const handleStopDrawing = () => {
     setIsDrawing(false)
@@ -97,7 +97,7 @@ export default function DrawingBoard() {
         touchAction: 'none',
       }}
     >
-      {lines.map(({ id, points }) => (
+      {lines.map(({ id, points, color, strokeWidth }) => (
         <polyline
           key={id}
           fill='none'

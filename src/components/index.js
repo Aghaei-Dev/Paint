@@ -1,5 +1,13 @@
 import DrawingBoard from './DrawingBoard'
-import { TopTool, CenterTool, ZoomTool } from './Tools'
+import { TopTool, CenterTool, SubCenterTool, ZoomTool } from './Tools'
 import { Tooltip, Toggle } from './Assistance'
 
-export { DrawingBoard, TopTool, CenterTool, Tooltip, Toggle, ZoomTool }
+export {
+  DrawingBoard,
+  TopTool,
+  CenterTool,
+  SubCenterTool,
+  Tooltip,
+  Toggle,
+  ZoomTool,
+}

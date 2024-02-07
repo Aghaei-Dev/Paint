@@ -2,23 +2,35 @@ import React from 'react'
 import styled from '@emotion/styled'
 import { Minus, Plus } from '../../assets/icons'
 import { Tooltip } from '../Assistance'
-
+import { useSelector, useDispatch } from 'react-redux'
+import { changeZoomLevel } from '../../features/global/globalSlice'
 export default function Zoom() {
+  const { zoomLevel } = useSelector((store) => store.global)
+  const dispatch = useDispatch()
+  const zoomLevelBtnHandler = (value) => {
+    dispatch(changeZoomLevel(value))
+  }
   return (
     <Wrapper>
       <Tooltip title='zoom in ctrl + +' placement='bottom'>
-        <button className='plus'>
+        <button
+          className='plus'
+          onClick={() => zoomLevelBtnHandler('INCREASE')}
+        >
           <Plus />
         </button>
       </Tooltip>
-      <Tooltip title='14 %' placement='left'>
+      <Tooltip title={`${zoomLevel} %`} placement='left'>
         <div className='slider'>
-          <input type='range' name='' id='' min={10} max={200} step={0.1} />
+          <input type='range' value={zoomLevel} min={10} max={200} step={0.1} />
         </div>
       </Tooltip>
 
       <Tooltip title='zoom out ctrl + -'>
-        <button className='minus'>
+        <button
+          className='minus'
+          onClick={() => zoomLevelBtnHandler('DECREASE')}
+        >
           <Minus />
         </button>
       </Tooltip>
@@ -37,7 +49,6 @@ const Wrapper = styled('div')(() => ({
   background: 'var(--white-1000)',
   transform: 'translate(0%,-20%)',
   width: '3%',
-  //   height: '80px',
   borderRadius: '17px',
   boxShadow: ' 0 0 0 0.5px var(--black-300)',
   svg: { width: '15px' },

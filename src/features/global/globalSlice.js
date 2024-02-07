@@ -3,6 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 const initialState = {
   isDarkMode: false,
   isMute: false,
+  zoomLevel: 100,
 }
 const globalSlice = createSlice({
   name: 'global',
@@ -11,17 +12,16 @@ const globalSlice = createSlice({
     toggleDarkMode: (state) => {
       state.isDarkMode = !state.isDarkMode
     },
-
-    // logoutUser: (state, { payload }) => {
-    //   state.user = null
-    //   state.isSidebarOpen = false
-    //   removeUserFromLocalStorage()
-    //   if (payload) {
-    //     toast.success(payload)
-    //   }
-    // },
+    changeZoomLevel: (state, { payload }) => {
+      if (state.zoomLevel <= 180 && payload === 'INCREASE') {
+        state.zoomLevel += 20
+      }
+      if (state.zoomLevel >= 20 && payload === 'DECREASE') {
+        state.zoomLevel -= 20
+      }
+    },
   },
 })
 
-export const { toggleDarkMode } = globalSlice.actions
+export const { toggleDarkMode, changeZoomLevel } = globalSlice.actions
 export default globalSlice.reducer

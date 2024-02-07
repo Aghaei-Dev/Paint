@@ -7,8 +7,8 @@ export default function Pen() {
     <svg
       className='pen'
       width='48'
-      height='136'
-      viewBox='20 0 48 136'
+      height='80'
+      viewBox='20 0 48 80'
       fill='none'
       xmlns='http://www.w3.org/2000/svg'
     >

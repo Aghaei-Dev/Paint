@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { changeCursor } from '../../features/draw/drawSlice'
 import { cursorTools } from '../../assets/constants'
 import { Circle, Arrow, Square, Triangle } from '../../assets/shapes'
-
+import { SubCenterTool } from '../'
 export default function Center() {
   const { cursor } = useSelector((store) => store.draw)
   const dispatch = useDispatch()
@@ -16,6 +16,8 @@ export default function Center() {
 
   return (
     <Wrapper>
+      <SubCenterTool />
+
       <div className='vertical-btn'>
         {cursorTools.map((item) => {
           const { id, name, icon } = item
@@ -57,9 +59,9 @@ const Wrapper = styled('div')(() => ({
   left: '50%',
   transform: 'translate(-50%,-20%)',
   height: '80px',
+  width: '80%',
   borderRadius: '13px',
   boxShadow: ' 0 0 0 0.5px var(--black-300)',
-  overflow: 'hidden',
 
   '.vertical-btn': {
     display: 'flex',
@@ -99,17 +101,27 @@ const Wrapper = styled('div')(() => ({
 
     '.pen': {
       background: 'red',
-      marginTop: '2rem',
+      // maxHeight: '70px',
     },
     article: {
-      background: 'blue',
+      // maxHeight: '70px',
+      // background: 'blue',
       position: 'relative',
     },
     '.shapes': {
-      position: 'relative',
-      svg: {
-        position: 'absolute',
-        left: '-100%',
+      display: 'grid',
+      gridTemplateColumns: '35px 35px',
+      gridTemplateRows: '35px 35px',
+      div: {
+        border: '1px solid red',
+        alignSelf: 'stretch',
+        display: 'grid',
+        placeItems: 'center',
+        svg: {
+          display: 'block',
+          // width: '30px',
+          // height: '30px',
+        },
       },
     },
   },
