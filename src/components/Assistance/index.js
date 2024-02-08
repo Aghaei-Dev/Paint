@@ -1,4 +1,5 @@
 import Tooltip from './Tooltip'
 import Toggle from './Toggle'
+import ControlBtn from './ControlBtn'
 
-export { Tooltip, Toggle }
+export { Tooltip, Toggle, ControlBtn }

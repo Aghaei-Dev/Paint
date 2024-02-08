@@ -1,4 +1,6 @@
 import { Cursor, Hand } from '../icons'
+import { firstCover, secondCover, thirdCover } from '../images'
+import { firstMusic, secondMusic, thirdMusic } from '../sounds'
 
 export const cursorTools = [
   { id: 0, name: 'select', icon: <Cursor /> },
@@ -21,4 +23,12 @@ export const penSizes = [
   { id: 1, penSize: 6 },
   { id: 2, penSize: 8 },
   { id: 3, penSize: 10 },
+]
+
+export const dancingBarsNumber = 25
+
+export const musicAndCoverArray = [
+  { id: 0, cover: firstCover, file: firstMusic },
+  { id: 1, cover: secondCover, file: secondMusic },
+  { id: 2, cover: thirdCover, file: thirdMusic },
 ]

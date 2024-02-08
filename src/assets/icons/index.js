@@ -8,8 +8,13 @@ import Cursor from './Cursor'
 import Hand from './Hand'
 import Pen from './Pen'
 import StickyNote from './StickyNote'
+import Rainbow from './Rainbow'
+import Play from './Play'
+import Pause from './Pause'
+import Next from './Next'
 
 export {
+  Next,
   ArrowRight,
   ArrowLeft,
   Minus,
@@ -19,4 +24,7 @@ export {
   Hand,
   Pen,
   StickyNote,
+  Rainbow,
+  Pause,
+  Play,
 }

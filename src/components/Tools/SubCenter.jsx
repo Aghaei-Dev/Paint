@@ -3,9 +3,11 @@ import styled from '@emotion/styled'
 import { useSelector, useDispatch } from 'react-redux'
 import { penColors, penSizes } from '../../assets/constants'
 import { changeColor, changeStrokeWidth } from '../../features/draw/drawSlice'
-import { rainbow } from '../../assets/images'
+import { Rainbow } from '../../assets/icons'
+
 export default function SubCenter() {
   const dispatch = useDispatch()
+
   const { color, activeTool, strokeWidth } = useSelector((store) => store.draw)
 
   const changeColorHandler = (newColor) => {
@@ -14,8 +16,9 @@ export default function SubCenter() {
   const changePenWidthHandler = (newWidth) => {
     dispatch(changeStrokeWidth(newWidth))
   }
+
   return (
-    <Wrapper rainbow={rainbow}>
+    <Wrapper>
       {activeTool === 'pen' &&
         penColors.map((item) => {
           const { id, penColor } = item
@@ -43,12 +46,14 @@ export default function SubCenter() {
           )
         })}
       </div>
-      <div className='custom'></div>
+      <div className='custom'>
+        <Rainbow />
+      </div>
     </Wrapper>
   )
 }
 
-const Wrapper = styled('div')(({ rainbow }) => ({
+const Wrapper = styled('div')(() => ({
   display: 'flex',
   justifyContent: 'start',
   alignItems: 'center',
@@ -75,9 +80,8 @@ const Wrapper = styled('div')(({ rainbow }) => ({
     padding: '0.2rem .8rem',
   },
   '.custom': {
-    backgroundImage: `url("${rainbow}")`,
-    height: '25.6px',
-    width: '25.6px',
+    height: '40px',
+    width: '40px',
     borderRadius: '50px',
   },
 }))
